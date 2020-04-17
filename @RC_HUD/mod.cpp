@@ -1,0 +1,11 @@
+name = "RC HUD";
+picture = "HUD_logo_paa.paa";
+overviewPicture = "HUD_logo_mini_paa.paa";
+logoSmall = "logo.paa";
+logo = "logo.paa";
+logoOver = "";
+actionName = "Website";
+action = "";
+author = "DarthBarada";
+overview = "New opportunities from Arma 3";
+description = "This small extention add new mask for RC soldiers with special script.";
