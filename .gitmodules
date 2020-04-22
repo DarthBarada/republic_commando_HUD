@@ -1,0 +1,6 @@
+[submodule "tools/CBA_A3"]
+	path = tools/CBA_A3
+	url = https://github.com/CBATeam/CBA_A3.git
+[submodule "tools/ACE3"]
+	path = tools/ACE3
+	url = https://github.com/acemod/ACE3.git
