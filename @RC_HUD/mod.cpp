@@ -1,4 +1,4 @@
-name = "RC HUD";
+name = "RC system";
 picture = "HUD_logo_paa.paa";
 overviewPicture = "HUD_logo_mini_paa.paa";
 logoSmall = "logo.paa";
