@@ -6,11 +6,11 @@ class CfgFunctions
 					{
 						class IFF_system // Система свой-чужой для Republic Commando
 							{
-								file = "RC_HUD\functions\IFF_system.sqf";
+								file = "RC_HUD\data\scripts\IFF_system.sqf";
 							};
-						class system_startup
+						class startup
 							{ 
-								file = "RC_HUD\functions\system_startup.sqf";
+								file = "RC_HUD\data\scripts\startup.sqf";
 							};
 					};
 			};
