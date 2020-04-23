@@ -17,16 +17,18 @@
 waitUntil { !isNull findDisplay 46 };
 
 _nameString="";
-_x_pos_HUD = safeZoneX + 0.05;
-_y_pos_HUD = 0.6;
+//_x_pos_HUD = safeZoneX + 0.05;
+//_y_pos_HUD = 0.6;
+_x_pos_HUD = 0.675;
+_y_pos_HUD = 0.8; 
 
-while{(list_of_HUD find (goggles player)) != -1} do
+while{(list_of_HUDs find (goggles player)) != -1} do
 	{
 		_target = cursorObject; // When someone just stay, game think that it's a object but not a target.
 
 		if ((_target isKindOf "Man") && (player == vehicle player)) then
 			{			
-				if(((player distance _target) < _distance) && (alive _target)) then
+				if(((player distance _target) < system_distance) && (alive _target)) then
 					{
 						_weaponsplayer = weapons _target;
 						_weaponsplayername = "";
@@ -59,7 +61,7 @@ while{(list_of_HUD find (goggles player)) != -1} do
 							{
 								_nameString = format ["<t size='0.5' align='left' shadow='2' color='#FF0000'>%3. </t><t size='0.5' align='left' shadow='2' color='#FF0000'>%1</t><br/><t size='0.5' align='left' shadow='2' color='#FF0000'>%2</t><br/><t size='0.5' align='left' shadow='2' color='#FF0000'>Дистанция: %4</t><br/>",_displayname, _weaponsplayername,_rank,_distance_to_target];
 							};
-						[_nameString,_x_pos_HUD,_y_pos_HUD,_refresh,0,0,3] spawn bis_fnc_dynamicText;
+						[_nameString,_x_pos_HUD,_y_pos_HUD,system_refresh,0,0,3] spawn bis_fnc_dynamicText;
 					};				
 			};
 
@@ -67,7 +69,7 @@ while{(list_of_HUD find (goggles player)) != -1} do
 	
 		if ((_target isKindOf "Car" || _target isKindOf "Motorcycle" ||  _target isKindOf "boat" || _target isKindOf "air" || _target isKindOf "Tank") && (player == vehicle player)) then
 			{
-				if(((player distance _target) < _distance) && (alive _target))then
+				if(((player distance _target) < system_distance) && (alive _target))then
 					{
 						_side = side group _target;
 						_displayname = getText (configFile >> "CfgVehicles" >> (typeOf _target) >> "displayName");
@@ -81,9 +83,9 @@ while{(list_of_HUD find (goggles player)) != -1} do
 								case civilian:{_nameString = format ["<t size='0.5' align='left' shadow='2' color='#7F00FF'>%1</t><br/><t size='0.5' align='left' shadow='2' color='#7F00FF'>Дистанция: %2</t><br/><t size='0.5' align='left' shadow='2' color='#7F00FF'>Состояние: %3</t><br/>",_displayname,_distance_to_target, _health]};
 								default{_nameString = format ["<t size='0.5' align='left' shadow='2' color='#FFFFFF'>%1</t><br/><t size='0.5' align='left' shadow='2' color='#FFFFFF'>Дистанция: %2</t><br/><t size='0.5' align='left' shadow='2' color='#FFFFFF'>Состояние: %3</t><br/>",_displayname,_distance_to_target, _health]};
 							};
-						[_nameString,_x_pos_HUD,_y_pos_HUD,_refresh,0,0,3] spawn bis_fnc_dynamicText;						
+						[_nameString,_x_pos_HUD,_y_pos_HUD,system_refresh,0,0,3] spawn bis_fnc_dynamicText;						
 					};
 			};
 
-		sleep _refresh;
+		sleep system_refresh;
 	};

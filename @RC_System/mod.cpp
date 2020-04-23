@@ -1,0 +1,11 @@
+name = "RC system";
+picture = "HUD_logo_paa.paa";
+overviewPicture = "HUD_logo_mini_paa.paa";
+logoSmall = "logo.paa";
+logo = "logo.paa";
+logoOver = "";
+actionName = "Github";
+action = "https://github.com/DarthBarada/republic_commando_HUD#republic-commando-hud";
+author = "DarthBarada";
+overview = "New opportunities from Arma 3";
+description = "This small extention add new mask for RC soldiers with special script.";
